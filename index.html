@@ -16,12 +16,23 @@
 <div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGlsbHM5NSIsImEiOiJjajI5YjM4YjQwMDR5MzNwam0yYmx0M2d1In0.S-Ch7EFnBYY76pAAVjUK4g';
+
+// Set bounds to Zanzibar
+var bounds = [
+    [33.42041015625, -9.925565912405494], // Southwest coordinates
+    [45.703125, -1.5159363834516735]  // Northeast coordinates
+];
+
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/hills95/cjlj89kp70f0e2spjq77yovqj', // stylesheet location
     center: [39.199562072753906, -6.165472962780473], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    zoom: 7.6, // starting zoom
+    maxBounds: bounds // Sets bounds as max
 });
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
 </script>
 
 </body>
